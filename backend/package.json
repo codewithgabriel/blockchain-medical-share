@@ -1,0 +1,14 @@
+{
+  "name": "mds",
+  "version": "1.0.0",
+  "description": "Medical Datashare",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "truffle migrate"
+  },
+  "author": "gabriel",
+  "license": "ISC"
+}
