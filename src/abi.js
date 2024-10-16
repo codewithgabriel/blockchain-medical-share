@@ -1,2 +1,2 @@
-let contractAddress = "0xcdc2bd35f65caf427ff64079abec57eebf9a8c5d";
+let contractAddress = "0x4540ca2529b626f6d7b57c6a6c47186327c7b82e";
 export default  contractAddress;

@@ -18,12 +18,17 @@ export default function ViewRecords() {
 
 //   const [component, setComponent] = useState(<FormView handleInput={handleInput} authorizeUser={authorizeUser} />);
 
-  function authorizeUser(ev) {
+  async function authorizeUser(ev) {
     ev.preventDefault();
-    // alert(payload.address);
+    let isAuthorized  = await contract.call('isAuthorized' , [payload.address , address])
+    console.log(`isAuthorized: ${isAuthorized}`)
+    if (isAuthorized) {
+      // alert(payload.address);
     Swal.fire({
       title: "Loading...",
       html: "Please wait...",
+      background: "#172554",
+      color: '#fff',
       allowOutsideClick: false,
       didOpen: () => {
         Swal.showLoading();
@@ -34,12 +39,12 @@ export default function ViewRecords() {
       .then((r) => {
        
        setResult({ fullname: r[0] , age: r[1].toNumber()  , data: r[2]})
-      
-
         Swal.fire({
           title: "Document",
           html: `Fullname: ${r[0]}\n Age: ${r[1]} \n Data: ${r[2]}`,
           icon: "success",
+          background: "#172554",
+          color: '#fff',
           position: "center",
         });
       })
@@ -70,7 +75,20 @@ export default function ViewRecords() {
 
         }
        
+      }); 
+
+    }else {
+      Swal.fire({
+        text: "You are not authorized to view this data",
+        title: "Access Denied",
+        icon: "error",
+        toast: true,
+        background: "#172554",
+        color: '#fff',
+        position: "center",
       });
+    }
+    
   }
 
   function handleInput(ev) {
@@ -78,6 +96,8 @@ export default function ViewRecords() {
     let val = ev.target.value;
     setPayload({ [name]: val });
   }
+
+
 
 
   return (
