@@ -79,7 +79,7 @@ export default function ViewRecords() {
 
     }else {
       Swal.fire({
-        text: "You are not authorized to view this data",
+        text: "You are not authorized to view this document, Please contact provider/patient for authorization",
         title: "Access Denied",
         icon: "error",
         toast: true,

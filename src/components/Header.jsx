@@ -27,7 +27,7 @@ export default function Header ({setActiveComponent}) {
         <nav className={` bg-blue-950 text-white pb-5 md:text-sm ${state ? "shadow-lg rounded-xl border mx-2 mt-2 md:shadow-none md:border-none md:mx-2 md:mt-0" : ""}`}>
             <div className="gap-x-14 items-center max-w-screen-xl mx-auto px-4 md:flex md:px-8">
                 <div className="flex items-center justify-between py-5 md:block">
-                    <h3 className="text-2xl font-bold"> Blockchain Base eHealth System </h3>
+                    <h3 className="text-2xl font-bold"> Blockchain Based eHealth System </h3>
                     <div className="md:hidden">
                         <button className="menu-btn text-gray-500 hover:text-gray-800"
                             onClick={() => setState(!state)}

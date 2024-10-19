@@ -91,7 +91,7 @@ export default function App() {
         <div className="h-screen w-7/12  hidden sm:flex" style={{backgroundImage: `url(${image})` , backgroundRepeat: 'no-repeat'}}>
         
         <div className="bg-black bg-opacity-40 w-full flex justify-center items-center h-screen">
-          <h1 className="py-3 text-4xl font-bold text-white ">  Blockchain Base eHealth System </h1>
+          <h1 className="py-3 text-4xl font-bold text-white ">  Blockchain Based eHealth System </h1>
         </div>
 
         </div>
