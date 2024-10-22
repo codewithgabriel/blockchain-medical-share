@@ -24,6 +24,7 @@ import { providers } from "ethers";
 import Dashbaord from "./components/Dashbaord.jsx";
 import AuthorizeProvider from "./components/AuthorizeProvider.jsx";
 import ViewRecords from "./components/ViewRecords.jsx";
+import MedicalRecordForm from "./components/Form.jsx";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,9 @@ const router = createBrowserRouter([
   },{ 
       path: "/dashboard/viewrecords",
       element: <ViewRecords />
+  }, {
+    path: '/form',
+    element: <MedicalRecordForm />
   }
 ]);
 

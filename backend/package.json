@@ -10,5 +10,8 @@
     "test": "truffle migrate"
   },
   "author": "gabriel",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "mds": "file:"
+  }
 }
