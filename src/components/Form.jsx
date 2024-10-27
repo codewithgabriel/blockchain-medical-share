@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import axios from 'axios'; 
 import contractAddress from "../abi";
 import * as abi from "./abi.json";
-import { useContract } from "@thirdweb-dev/react";
+import { useContract , useAddress  } from "@thirdweb-dev/react";
+
 
 import Swal from 'sweetalert2';
 
@@ -25,6 +25,7 @@ const ipfs = create(
 );
 
 const MedicalRecordForm = () => {
+  const address =  useAddress();
 
   const [jsonData, setJsonData] = useState('');  
   const [ipfsHash, setIpfsHash] = useState(''); 
@@ -559,7 +560,7 @@ const MedicalRecordForm = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
         <div>
           <label className="block text-sm font-medium text-gray-700">Signature:</label>
-          <input type="text" name="signature" className="mt-1 block w-full p-2 border border-gray-300 rounded-md" />
+          <input type="text" value={address} disabled name="signature" className="mt-1 block w-full p-2 border border-gray-300 rounded-md" />
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700">Date:</label>
